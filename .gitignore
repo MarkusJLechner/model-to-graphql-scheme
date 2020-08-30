@@ -6,3 +6,4 @@ node_modules
 
 docker/mysql/lib
 docker/mysql/log
+!docker/mysql/dump

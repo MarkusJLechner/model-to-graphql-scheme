@@ -19,6 +19,7 @@ services:
     container_name: 'mtgs-mysql'
     command: "--innodb-use-native-aio=0"
     volumes:
+      - ./docker/mysql/dump/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
       - ./docker/mysql/lib/mysql:/var/lib/mysql
       - ./docker/mysql/log/mysql:/var/log/mysql
     ports:
