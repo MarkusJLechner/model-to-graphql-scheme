@@ -5,6 +5,7 @@
     "author": "Markus Lechner",
     "private": false,
     "license": "BSD-3-Clause",
+    "type": "module",
     "repository": {
         "type": "git",
         "url": "https://github.com/MarkusJLechner/mysql-to-graphql-schema.git"
