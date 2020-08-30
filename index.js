@@ -1,5 +1,8 @@
 import SchemaBuilder from './lib/schemaBuilder.js'
 
+import overwrites from './lib/loaders/overwrites.js'
+import permissions from './lib/loaders/permissions.js'
+
 // output folder where the generated .graphql schemes are saved
 const outputFolder = `output/Models/Generated/`
 
@@ -36,13 +39,15 @@ const options = {
   ],
   singularExclude: ['news'],
   outputFolder: outputFolder,
-  overwrites: require(__dirname + '/lib/loaders/overwrites'),
-  permissions: require(__dirname + '/lib/loaders/permissions'),
+  overwrites: overwrites,
+  permissions: permissions,
 }
 
-require('dotenv').config({ path: '.env' })
-const schemaBuilder = require(__dirname + '/lib/schemaBuilder')
-schemaBuilder(options)
+// require('dotenv').config({ path: '.env' })
+import dotenv from 'dotenv'
+dotenv.config({ path: '.env' })
+// const schemaBuilder = require(__dirname + '/lib/schemaBuilder')
+//new mainFunction(options)
 
-const sb = SchemaBuilder
+const sb = SchemaBuilder(options)
 console.log(sb)
