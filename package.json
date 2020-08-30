@@ -4,17 +4,23 @@
     "description": "An mysql model to graphql converter",
     "author": "Markus Lechner",
     "private": false,
-    "license" : "BSD-3-Clause",
+    "license": "BSD-3-Clause",
     "repository": {
-        "type" : "git",
-        "url" : "https://github.com/MarkusJLechner/mysql-to-graphql-schema.git"
+        "type": "git",
+        "url": "https://github.com/MarkusJLechner/mysql-to-graphql-schema.git"
     },
     "scripts": {
-        "conv": "node"
+        "coverage": "jest --coverage",
+        "test": "jest"
     },
     "dependencies": {
         "dotenv": "^8.2.0",
         "mysql": "^2.18.1",
-        "path": "^0.12.7"
+        "path": "^0.12.7",
+        "eslint": "^7.2.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "jest": "^26.0.1",
+        "prettier": "^2.0.5"
     }
 }
