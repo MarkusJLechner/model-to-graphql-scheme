@@ -1,0 +1,8 @@
+.env
+
+.idea
+output/**/*
+node_modules
+
+docker/mysql/lib
+docker/mysql/log

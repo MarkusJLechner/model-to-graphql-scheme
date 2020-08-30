@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: 'mtgs-node'
+    tty: true
+    environment:
+      HOST: 0.0.0.0
+    volumes:
+      - type: bind
+        source: ./
+        target: /var/www/html
+
+  mysql:
+    image: mysql:5.7.31
+    container_name: 'mtgs-mysql'
+    command: "--innodb-use-native-aio=0"
+    volumes:
+      - ./docker/mysql/lib/mysql:/var/lib/mysql
+      - ./docker/mysql/log/mysql:/var/log/mysql
+    ports:
+      - '3306:3306'
+    tty: true
+    cap_add:
+      - SYS_NICE
+    environment:
+      MYSQL_ROOT_PASSWORD: default
+      MYSQL_DATABASE: mysqlschema
+
+networks:
+  default:
+    driver: bridge

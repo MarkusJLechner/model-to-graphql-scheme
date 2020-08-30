@@ -1,0 +1,20 @@
+{
+    "name": "mysql-to-graphql-schema",
+    "version": "20.8.1",
+    "description": "An mysql model to graphql converter",
+    "author": "Markus Lechner",
+    "private": false,
+    "license" : "BSD-3-Clause",
+    "repository": {
+        "type" : "git",
+        "url" : "https://github.com/MarkusJLechner/mysql-to-graphql-schema.git"
+    },
+    "scripts": {
+        "conv": "node"
+    },
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "mysql": "^2.18.1",
+        "path": "^0.12.7"
+    }
+}
