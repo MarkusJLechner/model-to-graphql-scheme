@@ -1,4 +1,4 @@
-const exporting = {
+export default {
   queries: {
     middleware: ['restrict.shop'],
     permission: {
@@ -9,7 +9,7 @@ const exporting = {
   },
   columns: [
     {
-      key: 'description',
+      key: 'name',
       can: 'read orders',
       any: ['read orders'],
       middleware: ['jwt.auth'],

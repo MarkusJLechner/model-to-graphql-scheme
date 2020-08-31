@@ -1,4 +1,4 @@
-;[
+export default [
   {
     testValue: /(Int)/,
     replace: 'Boolean',
